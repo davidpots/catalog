@@ -27,6 +27,13 @@ $(window).bind("load", function() {
     return false;
   });
 
+$(document).on("click", '.imageWrapper.hasImage .imageClose', function(e) {
+  $(this).parent('.imageWrapper').removeClass('hasImage').addClass('predrop');
+  $(this).parent('.imageWrapper').find('.dropImage').attr('src','');
+  $(this).parent('.imageWrapper').find('.dragDropInstructions').show();
+  $(dropImage).attr('src',event.target.result);
+});
+
 
 
 
@@ -50,7 +57,7 @@ for (i = 0; i < $('.dropzone').length; i++ ) {
           dragDropInstructions = $(this).find('.dragDropInstructions');
 
       $(this).find('.tile').removeClass('hover');
-      $(imageWrapper).removeClass('predrop');
+      $(imageWrapper).removeClass('predrop').addClass('hasImage');
       $(dragDropInstructions).hide();
       e.preventDefault();
       var file = e.dataTransfer.files[0],

@@ -1,13 +1,56 @@
-// QUESTION:
+var postTypes = {
+    "Wildcard" : {
+        'name'  : "Wildcard",
+        'desc'  : "A post of your choice",
+    },
+    "Business Highlight" : {
+        'name'  : "Business Highlight",
+        'desc'  : "Showcase a product, service, or unique element",
+    },
+    "Consumer Prompt" : {
+        'name'  : "Consumer Prompt",
+        'desc'  : "Question, fill-in-the-blank, or multiple choice",
+    },
+    "Testimonial" : {
+        'name'  : "Testimonial",
+        'desc'  : "Highlight existing or encourage new",
+    },
+    "Feel Good" : {
+        'name'  : "Feel Good",
+        'desc'  : "Comical, sentimental, or inspirational graphic",
+    },
+    "Informative or Educational" : {
+        'name'  : "Informative or Educational",
+        'desc'  : "A fact or tip about the business or the industry at large",
+    },
+    "Customer-specific Photo" : {
+        'name'  : "Customer-specific Photo",
+        'desc'  : "Something reminiscent of being at the business",
+    },
+    "Conversational" : {
+        'name'  : "Conversational",
+        'desc'  : "Conversational graphic (or text-only) to encourage comments",
+    },
+    "Consumer Prompt" : {
+        'name'  : "Consumer Prompt",
+        'desc'  : "Question, fill-in-the-blank, or multiple choice",
+    },
+    "Introduction" : {
+        'name'  : "Introduction",
+        'desc'  : "Business overview, year founded, etc",
+    },
+    "Local Love" : {
+        'name'  : "Local Love",
+        'desc'  : "Regional celebration or local event that’s relevant to the business",
+    },
 
-// Is there a way I can repeat lines 5-26, as many times as is needed to match the # of times that the .tile elements occur on the page?
+};
 
-// I tried putting it within a for() loop, but that over-wrote all the variables in such a way so that the last occurance of .tile was the only one that worked.
-
-// This is for a prototype I'm hoping to put together quickly, where I want to have 6-12 empty tiles on a page, in which CMs will be able to drag and drop images into each tile freely
-
-// In this example as-is, you can drag and drop into the first 2 tiles –- b/c I brute forced it by copying the lines 5-26 below. obviously that is a non ideal way to do it.
-
+var banana = '<ul class="banana">';
+    $.each(postTypes, function(i) {
+      banana += "<li data-post-type='"+ postTypes[i].name +"'>"+ postTypes[i].name +"</li>";
+    });
+    banana += '</ul>';
 
 $(window).bind("load", function() {
 
@@ -27,13 +70,28 @@ $(window).bind("load", function() {
     return false;
   });
 
-$(document).on("click", '.imageWrapper.hasImage .imageClose', function(e) {
-  $(this).parent('.imageWrapper').removeClass('hasImage').addClass('predrop');
-  $(this).parent('.imageWrapper').find('.dropImage').attr('src','');
-  $(this).parent('.imageWrapper').find('.dragDropInstructions').show();
-  $(dropImage).attr('src',event.target.result);
-});
+  $(document).on("click", '.imageWrapper.hasImage .imageClose', function(e) {
+    $(this).parent('.imageWrapper').removeClass('hasImage').addClass('predrop');
+    $(this).parent('.imageWrapper').find('.dropImage').attr('src','');
+    $(this).parent('.imageWrapper').find('.dragDropInstructions').show();
+    $(dropImage).attr('src',event.target.result);
+  });
 
+
+
+  $(document).on("click", '.calendar-item-head', function(e) {
+    if($(e.target).parent().is(".banana")) return;
+    $('.banana').hide();
+    $(this).append(banana);
+  });
+
+  $(document).on("click", '.banana li', function(e) {
+    replacer = $(this).data('post-type');
+    replacerDesc = postTypes[replacer].desc;
+    $(this).closest('.calendar-item-head').find('h3').html(replacer);
+    $(this).closest('.calendar-item-head').find('p').html(replacerDesc);
+    $(this).parent().hide();
+  });
 
 
 

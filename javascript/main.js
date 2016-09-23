@@ -5,7 +5,7 @@ var postTypes = {
     },
     "Business Highlight" : {
         'name'  : "Business Highlight",
-        'desc'  : "Showcase a product, service, or unique element",
+        'desc'  : "Showcase a product or service that the business offers",
     },
     "Consumer Prompt" : {
         'name'  : "Consumer Prompt",
@@ -37,11 +37,23 @@ var postTypes = {
     },
     "Introduction" : {
         'name'  : "Introduction",
-        'desc'  : "Business overview, year founded, etc",
+        'desc'  : "Core function of the business. Overview, location, year founded, etc",
     },
     "Local Love" : {
         'name'  : "Local Love",
         'desc'  : "Regional celebration or local event that’s relevant to the business",
+    },
+    "Experiential" : {
+        'name'  : "Experiential",
+        'desc'  : "A customer-specific photo that represents the experience of being at the business",
+    },
+    "Unique Element" : {
+        'name'  : "Unique Element",
+        'desc'  : "Content that highlights a unique element of the business",
+    },
+    "Call-to-action" : {
+        'name'  : "Call-to-action",
+        'desc'  : "Content whose goal is to move a consumer to buy a product or schedule a service",
     },
 
 };
@@ -93,6 +105,23 @@ $(window).bind("load", function() {
     $(this).parent().hide();
   });
 
+
+
+  // Change that sequence
+  $(document).on("click", '.sequence-selector li', function(e) {
+    $('.sequence-selector li').removeClass("sequence-selector--active");
+    $(this).addClass("sequence-selector--active");
+  });
+
+  $(document).on("click", '.sequence-selector--ongoing', function(e) {
+    $('.sequence-container--roadmap').hide();
+    $('.sequence-container--ongoing').fadeIn();
+  });
+
+  $(document).on("click", '.sequence-selector--roadmap', function(e) {
+    $('.sequence-container--ongoing').hide();
+    $('.sequence-container--roadmap').fadeIn();
+  });
 
 
 

@@ -55,6 +55,10 @@ var postTypes = {
         'name'  : "Call-to-action",
         'desc'  : "Content whose goal is to move a consumer to buy a product or schedule a service",
     },
+    "Time sensitive" : {
+        'name'  : "Time sensitive",
+        'desc'  : "Content that relates to a holiday, season, or regional event",
+    },
 
 };
 

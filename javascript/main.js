@@ -22,13 +22,11 @@ $(window).bind("load", function() {
 
       placeholder =  '<div class="tile">\
                         <div class="imageWrapper">\
-                          <img class="dropImage" src="'+ compImage +'" />\
+                          <a href="'+ compImage +'"><img class="dropImage" src="'+ compImage +'" /></a>\
                         </div>\
                         <div class="photoLabel">\
+                          <a class="photoLabel-pp" href="'+ compPP +'"></a>\
                           <span class="photoLabel-location">'+ comp["location"] +'</span>\
-                          <span class="photoLabel-links">\
-                            <a target="_blank" title="View Passport" class="photoLabel-links-passport" href="'+ compPP +'"></a><a target="_blank" title="View Image" class="photoLabel-links-image" href="'+ compImage +'"></a>\
-                          </span>\
                         </div>\
                       </div>';
       $('.container').append(placeholder);

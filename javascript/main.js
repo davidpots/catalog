@@ -24,7 +24,12 @@ $(window).bind("load", function() {
                         <div class="imageWrapper">\
                           <img class="dropImage" src="'+ compImage +'" />\
                         </div>\
-                        <p class="photoLabel"><a target="_blank" href="'+ compPP +'">View Passport</a></p>\
+                        <div class="photoLabel">\
+                          <span class="photoLabel-location">'+ comp["location"] +'</span>\
+                          <span class="photoLabel-links">\
+                            <a target="_blank" title="View Passport" class="photoLabel-links-passport" href="'+ compPP +'"></a><a target="_blank" title="View Image" class="photoLabel-links-image" href="'+ compImage +'"></a>\
+                          </span>\
+                        </div>\
                       </div>';
       $('.container').append(placeholder);
     });

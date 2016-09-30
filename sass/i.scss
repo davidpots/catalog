@@ -66,38 +66,41 @@
 }
 
 .photoLabel {
-  margin: 15px 0 7px;
   font-size: 12px;
-  text-align: center;
   a {
     text-decoration: none;
     color: #8D9FA9;
   }
+  opacity: .6;
 }
-// .captionWrapper {
-//   min-height: 48px;
-//   display:flex;
-//   align-items: center;
-//   margin-top: 12px;
-//   margin-bottom: 4px;
-// }
-// .caption {
-//   text-align: center;
-//   margin: 0 24px;
-//   width: 100%;
-//   font-size: 14px;
-// }
-//
-// .caption[contentEditable=true]:empty:not(:focus):before{
-//   content:attr(data-ph);
-//   color:#ccc;
-//   font-style:italic;
-// }
-//
-// .caption:focus {
-//    outline: none;
-// }
-//
-// .caption:hover {
-//   cursor: pointer;
-// }
+
+.photoLabel-location {
+  float: left;
+  display: inline-block;
+  margin: 20px 8px 10px;
+  color: #A4B2BA;
+  font-weight: 500;
+}
+
+.photoLabel-links {
+  float: right;
+  display: inline-block;
+  margin: 20px 10px 10px;
+  a {
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
+.photoLabel-links-passport {
+  background: url(../images/icon-passport.svg) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.photoLabel-links-image {
+  background: url(../images/icon-image.svg) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}

@@ -18,8 +18,8 @@
     }
 
 .container {
-  max-width: 1080px;
-  margin: 0 auto;
+  // max-width: 1280px;
+  // margin: 0 auto;
 }
 
 .intro {
@@ -37,204 +37,66 @@
 
 /* ----- */
 
-.calendar-item {
-  width: 320px;
-  display: inline-block;
-  vertical-align:top;
-  margin: 24px 32px 48px 0px;
-}
-
-.calendar-item-head {
-  height: 100px;
-  position: relative;
-  &:hover {
-    cursor: pointer;
-  }
-  .calendar-item-postNumber {
-    font-size: 12px;
-    color: #A3B2BA;
-    margin: 0 0 4px 0;
-  }
-  h3 {
-    font-size: 16px;
-    margin: 0 0 4px 0; }
-  p {
-    font-size: 14px;
-    margin: 0 0 16px 0; }
-}
-
 .tile {
+  width: 240px;
   background: white;
   border-radius: 3px;
   box-shadow: 0px 2px 12px rgba(115,131,140,0.15);
-  padding: 12px;
+  padding: 8px;
   position: relative;
+  display: inline-block;
+  vertical-align:top;
+  margin: 24px 24px 48px 0px;
 }
 
 /* ---- */
 
-.dropImage {
+.imageWrapper {
+  position: relative;
+  text-align: center;
+  min-height: 180px;
+}
+
+.imageWrapper img {
   vertical-align: bottom;
   z-index: 2;
   max-width: 100%;
   box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
-.imageClose {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  z-index: 1;
-  top: 10px;
-  right: 10px;
-  background: url(../images/icon-x.svg) no-repeat center;
-  display: none;
-}
-.imageWrapper.hasImage:hover .imageClose {
-  display: block;
-}
 
-.imageWrapper.hasImage:hover .imageClose:hover {
-  cursor: pointer;
-}
-
-body.hover .tile {
-  box-shadow: 0px 0px 8px rgba(55, 111, 222, 1);
-}
-
-.tile.hover {
-  box-shadow: 0px 0px 8px rgba(55, 111, 222, 1);
-}
-
-
-.imageWrapper {
-  position: relative;
-  text-align: center;
-  &.predrop {
-    min-height: 270px;
-    background-color: #F8FAFC;
-    border: 1px dashed darken(rgba(233, 234, 237,1),10%);
-  }
-}
-
-.dragDropInstructions {
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  color: #aaa;
-  text-align: center;
+.photoLabel {
+  margin: 15px 0 7px;
   font-size: 12px;
-  strong { font-size: 14px; margin-bottom: 4px; display: block; }
-}
-
-.captionWrapper {
-  min-height: 48px;
-  display:flex;
-  align-items: center;
-  margin-top: 12px;
-  margin-bottom: 4px;
-}
-.caption {
   text-align: center;
-  margin: 0 24px;
-  width: 100%;
-  font-size: 14px;
-}
-
-.tile.tile--textOnly {
-  position: relative;
-  min-height: 320px;
-  .imageWrapper {
-    display: none;
-  }
-  .caption {
-    font-size: 19px;
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    left: 5%;
-    transform: translate(0,-50%);
-    padding: 0;
-    width: auto;
-  }
-}
-
-.caption[contentEditable=true]:empty:not(:focus):before{
-  content:attr(data-ph);
-  color:#ccc;
-  font-style:italic;
-}
-
-.caption:focus {
-   outline: none;
-}
-
-.caption:hover {
-  cursor: pointer;
-}
-
-.banana {
-  position: absolute;
-  top: 20px;
-  left: -10px;
-  background: #fff;
-  margin:0;
-  padding: 0;
-  z-index: 1;
-  min-width: 200px;
-  border-radius: 4px;
-    box-shadow: 0px 1px 8px rgba(0,0,0,0.2);
-
-  li {
-    border-bottom: 1px solid #EBEEF1;
-    list-style: none;
-    padding: 8px 10px;
-    font-size: 12px;
-    &:hover {
-      cursor: pointer;
-      background: orange;
-    }
-  }
-  li:last-child {
-    border-bottom: none;
-  }
-}
-
-.sequence-selector {
-  margin: 0 0 32px 0;
-  padding: 0;
-  text-align: center;
-  li {
-    list-style: none;
-    display: inline-block;
-    padding: 6px 10px;
-    border: 1px solid #8D9FA9;
+  a {
+    text-decoration: none;
     color: #8D9FA9;
-    font-size: 14px;
-    background: #F8FAFC;
-    font-weight: bold;
-    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.2);
-  }
-  li:hover {
-    cursor: pointer;
-  }
-  li:first-child {
-    border-right: none;
-    border-radius: 24px 0 0 24px;
-    padding-left: 14px;
-  }
-  li:last-child {
-    border-radius: 0 24px 24px 0;
-    padding-right: 14px;
-  }
-  li.sequence-selector--active {
-    background: white;
-    color: #495960;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
   }
 }
-
-// Default is to hide this
-.sequence-container--ongoing { display: none; }
+// .captionWrapper {
+//   min-height: 48px;
+//   display:flex;
+//   align-items: center;
+//   margin-top: 12px;
+//   margin-bottom: 4px;
+// }
+// .caption {
+//   text-align: center;
+//   margin: 0 24px;
+//   width: 100%;
+//   font-size: 14px;
+// }
+//
+// .caption[contentEditable=true]:empty:not(:focus):before{
+//   content:attr(data-ph);
+//   color:#ccc;
+//   font-style:italic;
+// }
+//
+// .caption:focus {
+//    outline: none;
+// }
+//
+// .caption:hover {
+//   cursor: pointer;
+// }
